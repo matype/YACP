@@ -1,0 +1,19 @@
+{
+  "name": "YACP",
+  "version": "0.0.0",
+  "description": "Yet Another CSS Preprocessor",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "preprocessor"
+  ],
+  "author": "Masaaki Morishita",
+  "license": "MIT",
+  "dependencies": {
+    "css-parse": "^1.7.0",
+    "css-stringify": "^1.4.1"
+  }
+}
