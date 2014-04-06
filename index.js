@@ -35,6 +35,7 @@ stdin(function(str) {
   var res = rework(str)
   .use(extend)
   .use(ruleBinding)
+  .use(vars)
   .toString();
 
   res = autoprefixer().process(res);
