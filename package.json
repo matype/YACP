@@ -1,6 +1,6 @@
 {
   "name": "yacp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Yet Another CSS Preprocessor build on top of Rework",
   "main": "index.js",
   "scripts": {
