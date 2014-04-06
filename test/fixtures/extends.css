@@ -1,0 +1,8 @@
+%btn {
+  padding: 5px 10px;
+}
+
+.btn-lg {
+  font-size: 18px;
+  extends: %btn;
+}
