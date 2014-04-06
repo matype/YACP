@@ -20,6 +20,6 @@
     "stdin": "0.0.1"
   },
   "bin": {
-    "yacp": "bin/yacp"
+    "yacp": "bin/cli.js"
   }
 }
