@@ -12,6 +12,10 @@
     "rework"
   ],
   "author": "Masaaki Morishita",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/morishitter/yacp.git"
+  },
   "license": "MIT",
   "dependencies": {
     "rework": "^0.20.2",

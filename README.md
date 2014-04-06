@@ -1,4 +1,4 @@
-# YAPC
+# YACP
 
 Yet Another CSS Preprocessor build on top of [Rework](https://github.com/reworkcss/rework).
 
