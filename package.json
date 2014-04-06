@@ -2,7 +2,7 @@
   "name": "YACP",
   "version": "0.0.0",
   "description": "Yet Another CSS Preprocessor",
-  "main": "lib/yacp.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,9 +17,10 @@
     "rework-rule-binding": "^0.2.4",
     "autoprefixer": "^1.1.20140403",
     "commander": "^2.2.0",
-    "stdin": "0.0.1"
+    "stdin": "0.0.1",
+    "rework-vars": "^2.0.3"
   },
   "bin": {
-    "yacp": "bin/cli.js"
+    "yacp": "index.js"
   }
 }
