@@ -5,14 +5,11 @@ var vars = require('rework-vars')();
 var extend = require('rework').extend();
 var ruleBinding = require('rework-rule-binding');
 var autoprefixer = require('autoprefixer');
-
 var program = require('commander');
 var pkg = require('./package.json');
 var stdin = require('stdin');
 
-program
-  .version(pkg.version)
-  .parse(process.argv);
+program.version(pkg.version).parse(process.argv);
 
 stdin(function(str) {
   var options = {};
@@ -21,29 +18,25 @@ stdin(function(str) {
 
   pre.obj.stylesheet.rules.forEach(function(rule) {
     rule.declarations.forEach(function(declaration) {
-      if (declaration.value.match(/^\%.+?/)) {
-        if (declaration.property.match(/^(inherit|extend)s?$/i)) {
-          console.log("found!!");
-        } else {
+      if (declaration.property.match(/^(inherit|extend)s?$/i)) {
+        if (!declaration.value.match(/^\%.+?/)) {
           check = 1;
         }
       } else {
         return;
       }
-
+      if (check) {
+        var err =  new Error('YACP: only placeholder selectors inherit.');
+        err.position = declaration.position;
+        throw err;
+      }
     });
   });
+  var res = rework(str)
+  .use(extend)
+  .use(ruleBinding)
+  .toString();
 
-  if (check) {
-    var error = 0;
-  } else {
-    var res = rework(str)
-    .use(extend)
-    .use(ruleBinding)
-    .toString();
-
-    res = autoprefixer().process(res);
-  }
-
+  res = autoprefixer().process(res);
   process.stdout.write(res);
 });
