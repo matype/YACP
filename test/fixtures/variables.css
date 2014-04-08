@@ -1,0 +1,8 @@
+:root {
+  var-font-lg: 18px;
+}
+
+.btn-lg {
+  font-size: var(font-lg);
+  padding: 5px 10px;
+}

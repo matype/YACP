@@ -1,0 +1,9 @@
+%color-danger {
+  color: red;
+}
+
+.btn {
+  box-shadow: 10px 10px;
+  font-size: 18px;
+  extends: %color-danger;
+}

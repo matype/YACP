@@ -1,0 +1,8 @@
+.att {
+  color: red;
+}
+
+.attBox {
+  extend: .att;
+  padding: 15px;
+}

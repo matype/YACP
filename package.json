@@ -4,7 +4,7 @@
   "description": "Yet Another CSS Preprocessor build on top of Rework",
   "main": "lib/yacp.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha"
   },
   "keywords": [
     "css",
@@ -27,5 +27,9 @@
   },
   "bin": {
     "yacp": "bin/cli.js"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2",
+    "chai": "^1.9.1"
   }
 }
