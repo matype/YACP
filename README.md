@@ -1,4 +1,5 @@
-# YACP
+# YACP [![Build Status](https://travis-ci.org/morishitter/yacp.png)](https://travis-ci.org/morishitter/yacp)
+
 
 Yet Another CSS Preprocessor build on top of [Rework](https://github.com/reworkcss/rework).
 
