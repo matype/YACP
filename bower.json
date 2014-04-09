@@ -1,0 +1,28 @@
+{
+  "name": "client-yacp",
+  "version": "0.0.1",
+  "homepage": "https://github.com/morishitter/YACP",
+  "authors": [
+    "Masaaki Morishita <ikasama3.0@gmail.com>"
+  ],
+  "description": "Yet Another CSS Preprocessor",
+  "main": "client-yacp.js",
+  "keywords": [
+    "css",
+    "preprocessor",
+    "rework",
+    "yacp"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "package.json",
+    "README.md",
+    "bin",
+    "lib",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
