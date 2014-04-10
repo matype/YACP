@@ -49,7 +49,7 @@ Yields:
   font-weight: normal;
 }
 
-.btn {
+.attBox {
   -webkit-box-shadow: 5px 5px;
   box-shadow: 5px 5px;
   font-size: 18px;
