@@ -6,7 +6,13 @@ Yet Another CSS Preprocessor build on top of [Rework](https://github.com/reworkc
 ## Installation
 
 ```
-npm install -g yacp
+$ npm install -g yacp
+```
+
+when use in HTML:
+
+```
+$ bower install client-yacp
 ```
 
 ## Features
