@@ -18,14 +18,20 @@ npm install -g yacp
 ## Example
 
 ```css
-%color-danger {
-  color: red;
+:root {
+  var-font-lg: 18px;
 }
 
-.btn {
-  box-shadow: 10px 10px;
-  font-size: 18px;
-  extends: %color-danger;
+%att {
+  color: red;
+  font-weight: normal;
+}
+
+.attBox {
+  extend: %att;
+  box-shadow: 5px 5px;
+  font-size: var(font-lg);
+  padding: 5px 10px;
 }
 ```
 
@@ -38,14 +44,16 @@ $ yacp < input.css > output.css
 Yields:
 
 ```css
-.btn {
+.attBox {
   color: red;
+  font-weight: normal;
 }
 
 .btn {
-  -webkit-box-shadow: 10px 10px;
-  box-shadow: 10px 10px;
+  -webkit-box-shadow: 5px 5px;
+  box-shadow: 5px 5px;
   font-size: 18px;
+  padding: 5px 10px;
 }
 ```
 
