@@ -22,8 +22,8 @@ describe('YACP', function() {
     compareFixtures('auto-vendor-prefix');
   });
 
-  it('W3C-style CSS variable syntax', function() {
-    compareFixtures('variables');
+  it('rework-vars new syntax', function() {
+    compareFixtures('variable-new-syntax');
   });
 
   it('extend', function() {
