@@ -25,7 +25,7 @@ $ bower install client-yacp
 
 ```css
 :root {
-  var-font-lg: 18px;
+  --font-lg: 18px;
 }
 
 %att {
@@ -36,7 +36,7 @@ $ bower install client-yacp
 .attBox {
   extend: %att;
   box-shadow: 5px 5px;
-  font-size: var(font-lg);
+  font-size: var(--font-lg);
   padding: 5px 10px;
 }
 ```
