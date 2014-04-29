@@ -1,5 +1,6 @@
-# YACP [![Build Status](https://travis-ci.org/morishitter/YACP.svg)](https://travis-ci.org/morishitter/yacp)
+[![NPM](https://nodei.co/npm/yacp.png)](https://nodei.co/npm/yacp/)
 
+#YACP  [![Build Status](https://travis-ci.org/morishitter/YACP.svg)](https://travis-ci.org/morishitter/yacp)
 
 Yet Another CSS Preprocessor build on top of [Rework](https://github.com/reworkcss/rework).
 
