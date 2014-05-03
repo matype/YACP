@@ -64,6 +64,10 @@ Yields:
 }
 ```
 
+## Option projects
+
+- [grunt-yacp](https://github.com/morishitter/grunt-yacp)
+
 ## License
 The MIT License (MIT)
 
