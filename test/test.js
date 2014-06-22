@@ -2,7 +2,7 @@
 var Yacp = require('../lib/yacp.js');
 var fs = require('fs');
 var rework = require('rework');
-var extend = require('rework').extend();
+var extend = require('rework-inherit')();
 var expect = require('chai').expect;
 
 function fixture(name) {
