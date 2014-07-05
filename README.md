@@ -45,7 +45,7 @@ $ bower install client-yacp
 Compiled with the following command:
 
 ```
-$ yacp < input.css > output.css
+$ yacp -i input.css -o output.css
 ```
 
 Yields:
@@ -62,6 +62,24 @@ Yields:
   font-size: 18px;
   padding: 5px 10px;
 }
+```
+
+Show help:
+
+```
+$ yacp -h
+```
+
+```
+Usage: yacp [options]
+
+Options:
+
+  -i, --input       your yacp file to compile
+  -o, --output      output compiled css file
+  -c, --compress    use output compression
+  -V, --versions    output the version number
+  -h, --help        output usage information
 ```
 
 ## Option projects
