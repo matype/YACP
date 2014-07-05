@@ -1,0 +1,6 @@
+@import url("test/fixtures/extend.css");
+@import url("test/fixtures/variable-new-syntax.css");
+
+.imprt {
+  margin: 20px;
+}

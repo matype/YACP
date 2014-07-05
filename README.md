@@ -21,10 +21,13 @@ $ bower install client-yacp
 - [Automatic vendor-prefixed property](https://github.com/ai/autoprefixer)
 - [Rulesets binding syntax](https://github.com/morishitter/rework-rule-binding)
 - [W3C-style CSS variables syntax](https://github.com/reworkcss/rework-vars)
+- [Read and inline css via @import](https://github.com/reworkcss/rework-import)
 
 ## Example
 
 ```css
+@import url("foo.css")
+
 :root {
   --font-lg: 18px;
 }
@@ -51,6 +54,10 @@ $ yacp -i input.css -o output.css
 Yields:
 
 ```css
+.foo {
+  /* expand foo.css */
+}
+
 .attBox {
   color: red;
   font-weight: normal;

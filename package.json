@@ -23,7 +23,8 @@
     "rework-rule-binding": "^0.2.4",
     "rework-vars": "^3.0.0",
     "rework-inherit": "^0.2.2",
-    "optimist": "^0.6.1"
+    "optimist": "^0.6.1",
+    "rework-import": "^1.2.0"
   },
   "bin": {
     "yacp": "bin/cli.js"
