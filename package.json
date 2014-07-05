@@ -19,12 +19,11 @@
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^1.1.20140403",
-    "commander": "^2.2.0",
     "rework": "^1.0.0",
     "rework-rule-binding": "^0.2.4",
     "rework-vars": "^3.0.0",
-    "stdin": "0.0.1",
-    "rework-inherit": "^0.2.2"
+    "rework-inherit": "^0.2.2",
+    "optimist": "^0.6.1"
   },
   "bin": {
     "yacp": "bin/cli.js"
