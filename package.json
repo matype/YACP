@@ -27,7 +27,7 @@
     "rework-import": "^1.2.0"
   },
   "bin": {
-    "yacp": "bin/cli.js"
+    "yacp": "bin/yacp"
   },
   "devDependencies": {
     "mocha": "^1.18.2",
