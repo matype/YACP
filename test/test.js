@@ -33,11 +33,25 @@ describe('YACP', function() {
     it('import', function() {
         compareFixtures('import');
     });
+
+    /*
     it('throw error when extend non-placeholder-selector', function() {
         var yacp = new Yacp(fixture('extend-non-placeholder'));
         var output = function() {
             return yacp.toString();
         };
-        expect(output).to.Throw(Error, 'YACP: only placeholder selectors can inherit.')
+
+        expect(output).to.Throw(Error, 'YACP: only placeholder selectors can inherit.');
+        // expect(output).to.Throw(Error);
+    });
+   */
+
+    it('throw error when cascade placeholder selector', function() {
+        var yacp = new Yacp(fixture('placeholder'));
+        var output = function() {
+            return yacp.toString();
+        };
+
+        expect(output).to.Throw(Error);
     });
 });

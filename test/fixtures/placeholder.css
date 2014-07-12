@@ -1,0 +1,12 @@
+%placeholder {
+  color: red;
+}
+
+.foo {
+  padding: 20px;
+}
+
+%placeholder {
+  font-size: 12px;
+  color: blue;
+}
