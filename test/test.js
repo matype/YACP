@@ -1,8 +1,6 @@
 
 var Yacp = require('../lib/yacp.js');
 var fs = require('fs');
-var rework = require('rework');
-// var extend = require('rework-inherit')();
 var expect = require('chai').expect;
 
 function fixture(name) {
@@ -34,7 +32,6 @@ describe('YACP', function() {
         compareFixtures('import');
     });
 
-    /*
     it('throw error when extend non-placeholder-selector', function() {
         var yacp = new Yacp(fixture('extend-non-placeholder'));
         var output = function() {
@@ -42,16 +39,29 @@ describe('YACP', function() {
         };
 
         expect(output).to.Throw(Error, 'YACP: only placeholder selectors can inherit.');
-        // expect(output).to.Throw(Error);
     });
-   */
 
-    it('throw error when cascade placeholder selector', function() {
-        var yacp = new Yacp(fixture('placeholder'));
+    it('throw error when cascade binding-selector', function() {
+        var yacp = new Yacp(fixture('binding-selector'));
         var output = function() {
             return yacp.toString();
         };
 
-        expect(output).to.Throw(Error);
+        expect(output).to.Throw(Error, 'rework-rule-binding: binding-selector must not cascade');
+    });
+
+    it('throw error when cascade placeholder selector', function() {
+        var yacp = new Yacp(fixture('placeholder'));
+        var output = function() {
+            try {
+                var res = yacp.toString();
+                // console.log(res)
+                return res;
+            } catch (e) {
+                console.log(e)
+            }
+        };
+        expect(output).to.Throw(Error, 'rework-rule-binding: placeholder selector must not cascade');
+
     });
 });
