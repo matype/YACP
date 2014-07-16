@@ -1,6 +1,6 @@
 {
   "name": "yacp",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Yet Another CSS Preprocessor build on top of Rework",
   "main": "lib/yacp.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "dependencies": {
     "autoprefixer": "^1.1.20140403",
     "rework": "^1.0.0",
-    "rework-rule-binding": "^0.2.4",
+    "rework-rule-binding": "^0.3.0",
     "rework-vars": "^3.0.0",
     "rework-inherit": "^0.2.2",
     "optimist": "^0.6.1",

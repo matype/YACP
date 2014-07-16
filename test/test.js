@@ -53,15 +53,9 @@ describe('YACP', function() {
     it('throw error when cascade placeholder selector', function() {
         var yacp = new Yacp(fixture('placeholder'));
         var output = function() {
-            try {
-                var res = yacp.toString();
-                // console.log(res)
-                return res;
-            } catch (e) {
-                console.log(e)
-            }
+            return yacp.toString();
         };
-        expect(output).to.Throw(Error, 'rework-rule-binding: placeholder selector must not cascade');
 
+        expect(output).to.Throw(Error, 'rework-rule-binding: placeholder selector must not cascade');
     });
 });
