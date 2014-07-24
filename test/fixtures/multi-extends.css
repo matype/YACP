@@ -1,0 +1,13 @@
+%foo {
+  color: red;
+}
+
+%bar {
+  font-size: 14px;
+}
+
+.things {
+  extend: %foo;
+  extend: %bar;
+  padding: 5px;
+}

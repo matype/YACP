@@ -28,6 +28,10 @@ describe('YACP', function() {
         compareFixtures('extend');
     });
 
+    it('multi-extends', function() {
+        compareFixtures('multi-extends');
+    });
+
     it('import', function() {
         compareFixtures('import');
     });
