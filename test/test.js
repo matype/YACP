@@ -1,11 +1,12 @@
-
 var Yacp = require('../lib/yacp.js');
 var fs = require('fs');
 var expect = require('chai').expect;
 
+
 function fixture(name) {
     return fs.readFileSync('test/fixtures/' + name + '.css', 'utf-8').trim();
 }
+
 
 function compareFixtures(name) {
     var yacp = new Yacp(fixture(name));
