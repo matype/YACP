@@ -1,0 +1,6 @@
+@import url("test/fixtures/foo.css");
+
+.bar {
+  extend: %foo;
+  padding: 5px 10px;
+}

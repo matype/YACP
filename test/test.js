@@ -36,6 +36,10 @@ describe('YACP', function() {
         compareFixtures('import');
     });
 
+    it('extend-with-import', function() {
+        compareFixtures('extend-with-import');
+    });
+
     it('throw error when extend non-placeholder-selector', function() {
         var yacp = new Yacp(fixture('extend-non-placeholder'));
         var output = function() {
