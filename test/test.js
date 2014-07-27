@@ -67,4 +67,13 @@ describe('YACP', function() {
 
         expect(output).to.Throw(Error, 'rework-rule-binding: placeholder selector must not cascade');
     });
+
+    it('throw error if extended rule-sets have same properties', function() {
+        var yacp = new Yacp(fixture('validator'));
+        var output = function() {
+            return yacp.toString();
+        };
+
+        expect(output).to.Throw(Error, 'rework-extend-validator: extended rules have same properties');
+    });
 });
