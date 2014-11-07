@@ -6,6 +6,7 @@ var argv = optimist.alias('V', 'versions')
                    .alias('i', 'input')
                    .alias('o', 'output')
                    .alias('c', 'compress')
+                   .alias('w', 'whitespace')
                    .argv;
 
 var pkg = require('../package.json');
@@ -26,6 +27,7 @@ if (argv.h) {
     console.log('  -i, --input       your yacp file to compile');
     console.log('  -o, --output      output compiled css file');
     console.log('  -c, --compress    use output compression');
+    console.log('  -w, --whitespace  use whitespace syntax like Stylus');
     console.log('  -V, --versions    output the version number');
     console.log('  -h, --help        output usage information');
 }
@@ -37,8 +39,14 @@ if (argv.i && argv.o) {
         compress = true;
     }
 
+    var whitespace = false;
+    if (argv.w) {
+        whitespace = true;
+    }
+
     var options = {};
     options.compress = compress;
+    options.whitespace = whitespace;
 
     var css = fs.readFileSync(argv.i, 'utf-8');
     var yacp = new Yacp(css, options);

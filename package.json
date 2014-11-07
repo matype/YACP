@@ -25,7 +25,8 @@
     "rework-inherit": "^0.2.2",
     "optimist": "^0.6.1",
     "rework-import": "^1.2.0",
-    "rework-extend-validator": "0.0.1"
+    "rework-extend-validator": "0.0.1",
+    "css-whitespace": "^1.1.0"
   },
   "bin": {
     "yacp": "bin/yacp"

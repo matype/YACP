@@ -15,6 +15,16 @@ function compareFixtures(name) {
     ).to.equal(fixture(name + '.out'));
 }
 
+function compareFixturesForWhitespace(name) {
+    var options = {
+        "whitespace": true
+    };
+    var yacp = new Yacp(fixture(name), options);
+    return expect(
+        yacp.toString().css
+    ).to.equal(fixture(name + '.out'));
+}
+
 
 describe('YACP', function() {
     it('automatic vendor-prefixed property', function() {
@@ -39,6 +49,10 @@ describe('YACP', function() {
 
     it('extend-with-import', function() {
         compareFixtures('extend-with-import');
+    });
+
+    it('whitespace', function() {
+        compareFixturesForWhitespace('whitespace');
     });
 
     it('throw error when extend non-placeholder-selector', function() {

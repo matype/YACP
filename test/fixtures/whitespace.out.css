@@ -1,0 +1,10 @@
+body {
+  padding: 50px;
+  background: black;
+  color: white;
+}
+
+form button {
+  border-radius: 5px;
+  padding: 5px 10px;
+}
