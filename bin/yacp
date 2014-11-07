@@ -50,7 +50,7 @@ if (argv.i && argv.o) {
 
     var css = fs.readFileSync(argv.i, 'utf-8');
     var yacp = new Yacp(css, options);
-    fs.writeFile(argv.o, yacp.toString().css, function (err) {
+    fs.writeFile(argv.o, yacp.stringify().css, function (err) {
         if (err) {
             throw err;
         }

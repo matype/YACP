@@ -11,7 +11,7 @@ function fixture(name) {
 function compareFixtures(name) {
     var yacp = new Yacp(fixture(name));
     return expect(
-        yacp.toString().css
+        yacp.stringify().css
     ).to.equal(fixture(name + '.out'));
 }
 
@@ -21,7 +21,7 @@ function compareFixturesForWhitespace(name) {
     };
     var yacp = new Yacp(fixture(name), options);
     return expect(
-        yacp.toString().css
+        yacp.stringify().css
     ).to.equal(fixture(name + '.out'));
 }
 
@@ -58,7 +58,7 @@ describe('YACP', function() {
     it('throw error when extend non-placeholder-selector', function() {
         var yacp = new Yacp(fixture('extend-non-placeholder'));
         var output = function() {
-            return yacp.toString();
+            return yacp.stringify();
         };
 
         expect(output).to.Throw(Error, 'YACP: only placeholder selectors can inherit.');
@@ -67,7 +67,7 @@ describe('YACP', function() {
     it('throw error when cascade binding-selector', function() {
         var yacp = new Yacp(fixture('binding-selector'));
         var output = function() {
-            return yacp.toString();
+            return yacp.stringify();
         };
 
         expect(output).to.Throw(Error, 'rework-rule-binding: binding-selector must not cascade');
@@ -76,7 +76,7 @@ describe('YACP', function() {
     it('throw error when cascade placeholder selector', function() {
         var yacp = new Yacp(fixture('placeholder'));
         var output = function() {
-            return yacp.toString();
+            return yacp.stringify();
         };
 
         expect(output).to.Throw(Error, 'rework-rule-binding: placeholder selector must not cascade');
@@ -85,7 +85,7 @@ describe('YACP', function() {
     it('throw error if extended rule-sets have same properties', function() {
         var yacp = new Yacp(fixture('validator'));
         var output = function() {
-            return yacp.toString();
+            return yacp.stringify();
         };
 
         expect(output).to.Throw(Error, 'rework-extend-validator: extended rules have same properties');
