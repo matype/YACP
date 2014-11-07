@@ -91,6 +91,7 @@ Options:
   -i, --input       your yacp file to compile
   -o, --output      output compiled css file
   -c, --compress    use output compression
+  -w, --whitespace  use whitespace syntax like Stylus
   -V, --versions    output the version number
   -h, --help        output usage information
 ```
