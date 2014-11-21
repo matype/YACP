@@ -1,0 +1,20 @@
+%foo {
+  font-size: 12px;
+}
+
+%bar {
+  padding: 5px;
+}
+
+%foofoo {
+  extend: %foo;
+}
+
+%barbar {
+  extend: %bar;
+}
+
+.baz {
+  extend: %foofoo;
+  extend: %barbar;
+}

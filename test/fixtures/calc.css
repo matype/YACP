@@ -1,0 +1,11 @@
+:root {
+  --main-font-size: 16px;
+}
+
+body {
+  font-size: var(--main-font-size);
+}
+
+h1 {
+  font-size: calc(var(--main-font-size) * 2);
+}

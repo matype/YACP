@@ -47,8 +47,16 @@ describe('YACP', function() {
         compareFixtures('import');
     });
 
+    it('calc', function() {
+        compareFixtures('calc');
+    });
+
     it('extend-with-import', function() {
         compareFixtures('extend-with-import');
+    });
+
+    it('multiple-extend', function() {
+        compareFixtures('multiple-extend');
     });
 
     it('whitespace', function() {
