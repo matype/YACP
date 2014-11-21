@@ -1,1 +1,7 @@
-aaa
+.baz {
+  font-size: 12px;
+}
+
+.baz {
+  padding: 5px;
+}
