@@ -53,7 +53,7 @@ $ bower install client-yacp
 Compiled with the following command:
 
 ```
-$ yacp -i input.css -o output.css
+$ yacp input.css output.css
 ```
 
 Yields:
@@ -89,8 +89,6 @@ Usage: yacp [options]
 
 Options:
 
-  -i, --input       your yacp file to compile
-  -o, --output      output compiled css file
   -c, --compress    use output compression
   -w, --whitespace  use whitespace syntax like Stylus
   -V, --versions    output the version number

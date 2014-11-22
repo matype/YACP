@@ -3,8 +3,6 @@
 var optimist = require('optimist');
 var argv = optimist.alias('V', 'versions')
                    .alias('h', 'help')
-                   .alias('i', 'input')
-                   .alias('o', 'output')
                    .alias('c', 'compress')
                    .alias('w', 'whitespace')
                    .argv;
@@ -12,6 +10,7 @@ var argv = optimist.alias('V', 'versions')
 var pkg = require('../package.json');
 var fs = require('fs');
 var Yacp = require('../lib/yacp.js');
+
 
 
 if (argv.V) {
@@ -24,8 +23,6 @@ if (argv.h) {
     console.log('');
     console.log('Options:');
     console.log('');
-    console.log('  -i, --input       your yacp file to compile');
-    console.log('  -o, --output      output compiled css file');
     console.log('  -c, --compress    use output compression');
     console.log('  -w, --whitespace  use whitespace syntax like Stylus');
     console.log('  -V, --versions    output the version number');
@@ -33,7 +30,10 @@ if (argv.h) {
 }
 
 
-if (argv.i && argv.o) {
+if (argv._[0] && argv._[1]) {
+    var input = argv._[0];
+    var output = argv._[1];
+
     var compress = false;
     if (argv.c) {
         compress = true;
@@ -48,9 +48,9 @@ if (argv.i && argv.o) {
     options.compress = compress;
     options.whitespace = whitespace;
 
-    var css = fs.readFileSync(argv.i, 'utf-8');
+    var css = fs.readFileSync(input, 'utf-8');
     var yacp = new Yacp(css, options);
-    fs.writeFile(argv.o, yacp.stringify().css, function (err) {
+    fs.writeFile(output, yacp.stringify().css, function (err) {
         if (err) {
             throw err;
         }
