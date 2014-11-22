@@ -23,7 +23,8 @@ $ bower install client-yacp
 - [Rulesets binding syntax](https://github.com/morishitter/rework-rule-binding)
 - [Inherit other rules more safely](https://github.com/morishitter/rework-extend-validator)
 - [W3C-style CSS variables syntax](https://github.com/reworkcss/rework-vars)
-- [Read and inline css via @import](https://github.com/reworkcss/rework-import)
+- [Support `calc()`, a feature to do simple calculations](https://github.com/reworkcss/rework-calc)
+- [Read and inline css via `@import`](https://github.com/reworkcss/rework-import)
 
 ## Example
 
