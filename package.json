@@ -1,7 +1,7 @@
 {
   "name": "yacp",
   "version": "0.8.1",
-  "description": "Yet Another CSS Preprocessor build on top of Rework",
+  "description": "Yet Another CSS Preprocessor",
   "main": "lib/yacp.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha"
