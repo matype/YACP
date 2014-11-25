@@ -15,6 +15,16 @@ function compareFixtures(name) {
     ).to.equal(fixture(name + '.out'));
 }
 
+function compareFixturesForStrict(name) {
+    var options = {
+        "strict": true
+    };
+    var yacp = new Yacp(fixture(name), options);
+    return expect(
+        yacp.stringify().css
+    ).to.equal(fixture(name + '.out'));
+}
+
 function compareFixturesForWhitespace(name) {
     var options = {
         "whitespace": true
@@ -60,6 +70,10 @@ describe('YACP', function() {
     });
 
     it('whitespace', function() {
+        compareFixturesForStrict('strict');
+    });
+
+    it('whitespace', function() {
         compareFixturesForWhitespace('whitespace');
     });
 
@@ -97,5 +111,29 @@ describe('YACP', function() {
         };
 
         expect(output).to.Throw(Error, 'rework-extend-validator: extended rules have same properties');
+    });
+
+    it('strict mode: error using not only class selector', function() {
+        var options = {
+            "strict": true
+        };
+        var yacp = new Yacp(fixture('strict-only-class'), options);
+        var output = function() {
+            return yacp.stringify();
+        };
+
+        expect(output).to.Throw(Error, 'YACP strict mode: using not only class selector');
+    });
+
+    it('strict mode: error using !important', function() {
+        var options = {
+            "strict": true
+        };
+        var yacp = new Yacp(fixture('strict-important'), options);
+        var output = function() {
+            return yacp.stringify();
+        };
+
+        expect(output).to.Throw(Error, 'YACP strict mode: using !important');
     });
 });

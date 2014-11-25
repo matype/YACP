@@ -1,0 +1,8 @@
+.class {
+  color: red;
+}
+
+.class:before {
+  padding: 10px;
+}
+
