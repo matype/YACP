@@ -242,7 +242,7 @@ p.class {}
 
 and prohibit `!important`.
 
-```
+```css
 .class {
   /* Error */
   padding: 0 !important;
