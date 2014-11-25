@@ -4,6 +4,7 @@ var optimist = require('optimist');
 var argv = optimist.alias('V', 'versions')
                    .alias('h', 'help')
                    .alias('c', 'compress')
+                   .alias('s', 'strict')
                    .alias('w', 'whitespace')
                    .argv;
 
@@ -24,6 +25,7 @@ if (argv.h) {
     console.log('Options:');
     console.log('');
     console.log('  -c, --compress    use output compression');
+    console.log('  -s, --strict      use strict mode compile');
     console.log('  -w, --whitespace  use whitespace syntax like Stylus');
     console.log('  -V, --versions    output the version number');
     console.log('  -h, --help        output usage information');
@@ -39,6 +41,11 @@ if (argv._[0] && argv._[1]) {
         compress = true;
     }
 
+    var strict = false;
+    if (argv.s) {
+        strict = true;
+    }
+
     var whitespace = false;
     if (argv.w) {
         whitespace = true;
@@ -46,6 +53,7 @@ if (argv._[0] && argv._[1]) {
 
     var options = {};
     options.compress = compress;
+    options.strict = strict;
     options.whitespace = whitespace;
 
     var css = fs.readFileSync(input, 'utf-8');
