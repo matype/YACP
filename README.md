@@ -222,6 +222,40 @@ Options:
   -h, --help        output usage information
 ```
 
+### strict mode
+
+YACP's strict mode allow only class and pseudo-elements selector.
+
+Following selectors cannot compile.
+
+Ex:
+
+```css
+#id {}
+
+div {}
+
+.class .nested {}
+
+p.class {}
+```
+
+and prohibit `!important`.
+
+```
+.class {
+  /* Error */
+  padding: 0 !important;
+}
+```
+
+Using this option, you can keep [specificity](http://www.w3.org/TR/css3-selectors/#specificity) constant, so its code will be more maintenable.
+
+### whitespace mode
+
+Using with [css-whitespace](https://github.com/reworkcss/css-whitespace).
+
+
 ## Option projects
 
 - [grunt-yacp](https://github.com/morishitter/grunt-yacp)
