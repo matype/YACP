@@ -2,7 +2,7 @@
 
 #YACP  [![Build Status](https://travis-ci.org/morishitter/YACP.svg)](https://travis-ci.org/morishitter/yacp) [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/morishitter/YACP?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Yet Another CSS Preprocessor build on top of [Rework](https://github.com/reworkcss/rework).
+Yet Another CSS Preprocessor.
 
 ## Installation
 
@@ -16,14 +16,6 @@ when use in HTML:
 $ bower install client-yacp
 ```
 
-## Features
-
-- [Automatic vendor-prefixed property](https://github.com/ai/autoprefixer)
-- [Rulesets binding syntax](https://github.com/morishitter/rework-rule-binding)
-- [Inherit other rules more safely](https://github.com/morishitter/rework-extend-validator)
-- [W3C-style CSS variables syntax](https://github.com/reworkcss/rework-vars)
-- [Support `calc()`, a feature to do simple calculations](https://github.com/reworkcss/rework-calc)
-- [Read and inline css via `@import`](https://github.com/reworkcss/rework-import)
 
 ## Example
 
@@ -78,10 +70,144 @@ Yields:
 }
 ```
 
-Show help:
+## Features
+
+- [Automatic vendor-prefixed property](https://github.com/ai/autoprefixer)
+- [Rulesets binding syntax](https://github.com/morishitter/rework-rule-binding)
+- [Inherit other rules more safely](https://github.com/morishitter/rework-extend-validator)
+- [W3C-style CSS variables syntax](https://github.com/reworkcss/rework-vars)
+- [Support `calc()`, a feature to do simple calculations](https://github.com/reworkcss/rework-calc)
+- [Read and inline css via `@import`](https://github.com/reworkcss/rework-import)
+
+### Bind ruleset syntax
+
+YACP provide [Bind ruleset syntax](https://github.com/morishitter/rework-rule-binding/).
+
+Selectors rounded by `()` cannot cascade.
+
+Using this feature, you can define **encapsulated** ruleset.
+
+```css
+(.btn) {
+  background-color; #4dac26;
+  border: solid 1px #2c9700;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 8px;
+}
+
+/* Error */
+.btn {
+  padding: 15px 10px;
+}
+/* Error */
+(.btn) {
+  padding: 15px 10px;
+}
+```
+
+### Inherit other rulesets safely
+
+One of fault of existin CSS Preprocessor is compiling any code which don't have syntax error.
+
+This is 'dangerous' inheritance code (Sass):
+
+```css
+.btn {
+  border-radius: 5px;
+  color: #fff;
+  padding: 6px 12px;
+}
+
+.btn-success {
+  @extend .btn;
+  background-color: #4dac26;
+}
+
+...
+
+.btn {
+  padding: 8px 16px;
+}
+```
+
+Yields:
+
+```css
+.btn, .btn-success {
+  border-radius: 5px;
+  color: #fff;
+  padding: 6px 12px;
+}
+
+.btn-success {
+  background-color: #4dac26;
+}
+
+...
+
+.btn, .btn-success {
+  padding: 8px 16px;
+}
+```
+
+When overwrite `.btn`, `.btn-success` is overwrote too, and it may cause unexpected result.
+
+But, [YACP's inheritance is safe](https://github.com/morishitter/rework-extend-validator). You can use with `extend(s)` or `inherit(s)` property.
+
+1. Must use the placeholder selector (`%`). The Ruleset defined with placeholder selector don't output as CSS code.
+
+2. YACP's placeholder selector cannot cascade.
+
+3. If inherited selectors have same properties, run error.
+
+Ex (1, 2):
+
+```css
+%btn {
+  border-radius: 5px;
+  color: #fff;
+  padding: 6px 12px;
+}
+
+.btn-success {
+  extend: %btn;
+  background-color: var(--color-green);
+}
+
+/* Error */
+%btn {
+  padding: 8px 16px;
+}
+```
+
+Ex (3):
+
+```css
+%foo {
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+%bar {
+  color: #fff;
+  font-size: 14px;
+}
+
+.baz {
+  /* Error */
+  extend: %foo;
+  extend: %bar;
+}
+```
+
+Using this feature, you can define **private** (cannot overwrite and refer from only YACP code) ruleset.
+
+
+## Compile Options
 
 ```
-$ yacp -h
+$ yacp --help
 ```
 
 ```
@@ -90,6 +216,7 @@ Usage: yacp [options]
 Options:
 
   -c, --compress    use output compression
+  -s, --strict      use strict mode compile
   -w, --whitespace  use whitespace syntax like Stylus
   -V, --versions    output the version number
   -h, --help        output usage information
