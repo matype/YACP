@@ -28,7 +28,7 @@
     "rework-import": "^1.2.0",
     "rework-extend-validator": "0.0.2",
     "rework-calc": "^1.1.0",
-    "postcss": "^3.0.4",
+    "postcss": "^3.0.5",
     "yacp-strict": "0.0.1"
   },
   "bin": {
