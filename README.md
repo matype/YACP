@@ -4,8 +4,6 @@
 
 Yet Another CSS Preprocessor.
 
-But, YACP is only CSS Preprocessor can write more maintenable code.
-
 ## Installation
 
 ```
