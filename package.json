@@ -29,7 +29,7 @@
     "rework-extend-validator": "0.0.2",
     "rework-calc": "^1.1.0",
     "postcss": "^3.0.5",
-    "yacp-strict": "0.0.2"
+    "yacp-strict": "0.0.3"
   },
   "bin": {
     "yacp": "bin/yacp"
