@@ -1,6 +1,6 @@
 [![NPM](https://nodei.co/npm/yacp.png)](https://nodei.co/npm/yacp/)
 
-#YACP  [![Build Status](https://travis-ci.org/morishitter/YACP.svg)](https://travis-ci.org/morishitter/yacp) [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/morishitter/YACP?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+#YACP  [![Build Status](https://travis-ci.org/morishitter/YACP.svg)](https://travis-ci.org/morishitter/YACP) [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/morishitter/YACP?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Yet Another CSS Preprocessor.
 
